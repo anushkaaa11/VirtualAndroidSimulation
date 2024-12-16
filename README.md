@@ -127,6 +127,101 @@ else:
     print("Error adding app.")
 ```
 
+## Using Android Studio in This Assignment
+
+### Purpose of Android Studio in the Assignment
+Android Studio was utilized in this assignment to:
+- Build and generate the APK file for testing and installation in the virtual Android system.
+- Manage and simulate a virtual Android environment (via the AVD Manager).
+- Debug and manage the Android application lifecycle.
+
+### Prerequisites
+Before using Android Studio, ensure:
+1. **System Requirements** are met:
+   - Minimum 4 GB RAM (8 GB recommended).
+   - Java Development Kit (JDK) installed.
+   - Sufficient disk space for Android Studio and the Android SDK.
+2. **Android Studio Installed**
+   - [Download here](https://developer.android.com/studio).
+3. **Android Virtual Device (AVD)** setup in the SDK Manager.
+
+---
+
+### How Android Studio Was Used
+
+#### 1. **Creating the Project**
+1. Open Android Studio and create a new project:
+   - Select **Empty Activity** template.
+   - Configure the project settings (e.g., name, location, minimum SDK).
+2. The project structure was generated automatically, with the main files located in:
+   - `app/src/main/java/` for source code.
+   - `app/src/main/res/` for resources like layouts and strings.
+
+#### 2. **Building the APK File**
+1. Open the project in Android Studio.
+2. Navigate to the menu:
+   - **Build > Build Bundle(s)/APK(s) > Build APK(s).**
+3. After the build completes, the APK is generated at:
+   - `app/build/outputs/apk/debug/app-debug.apk`
+4. This APK was used for testing in the virtual Android system simulation.
+
+#### 3. **Setting Up the Emulator**
+1. Open **AVD Manager** in Android Studio:
+   - Tools > Device Manager > Create Device.
+2. Configure the virtual device:
+   - Choose a device model (e.g., Pixel 4).
+   - Select a system image (e.g., Android 13).
+   - Configure settings like RAM, storage, etc.
+3. Launch the emulator from Android Studio or via the command line using `emulator -avd <avd_name>`.
+
+#### 4. **Debugging the Application**
+1. Use Android Studio’s debugger to identify issues in the application.
+2. Install the APK directly from Android Studio:
+   - Connect the emulator and click **Run** to deploy and test the app.
+
+---
+
+### How to Use Android Studio for This Assignment
+
+#### Step 1: Install Android Studio
+- Download and install Android Studio from the [official site](https://developer.android.com/studio).
+- During setup, ensure you download the required SDK components.
+
+#### Step 2: Clone or Create Your Project
+- Open Android Studio.
+- If cloning, choose **File > New > Project from Version Control > Git**, and provide the repository URL.
+
+#### Step 3: Build the APK
+1. Open the project.
+2. Navigate to **Build > Build Bundle(s)/APK(s) > Build APK(s).**
+3. Note the path where the APK is saved (e.g., `app/build/outputs/apk/debug/app-debug.apk`).
+
+#### Step 4: Set Up the Emulator
+1. Open **AVD Manager** (Tools > Device Manager).
+2. Create a virtual device with your preferred configurations.
+3. Start the emulator using the play button in **AVD Manager** or via the command line:
+   ```bash
+   emulator -avd <avd_name>
+   ```
+
+#### Step 5: Install and Test the APK
+1. Install the APK using Android Studio or `adb` command:
+   ```bash
+   adb install <path_to_apk>
+   ```
+2. Run the app in the emulator to verify its functionality.
+
+---
+
+### Common Issues and Solutions
+- **Emulator not booting**: Ensure the AVD settings are compatible with your system’s hardware.
+- **APK installation failed**: Check if the emulator is running and ensure the APK path is correct.
+- **Build errors**: Resolve dependencies or Gradle issues in the `build.gradle` file.
+
+---
+
+By following these steps, you can replicate or extend the work done in this assignment using Android Studio.
+
 ---
 
 ## **Notes**
